@@ -115,4 +115,4 @@ if __name__ == "__main__":
 
     print_grid2(3)
 
-    print_grid3(3, 7)
+    print_grid3(3, 4)
