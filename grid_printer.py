@@ -71,14 +71,13 @@ def print_grid2(size):
 
 # PART 3
 def add_section3(size):
-    num_of_sec = size // 2
     print('+ ', end='')
-    print(num_of_sec * '- ', end='')
+    print(size * '- ', end='')
 
 
 def build_top_row3(sections, size):
     for _ in range(sections):
-        add_section(size)
+        add_section3(size)
     print('+')
 
 
@@ -92,13 +91,12 @@ def add_box_section3(size):
 
 def build_box_row3(sections, size):
     for _ in range(sections):
-        add_box_section(size)
+        add_box_section3(size * 2)
     print('|')
 
 
 def build_box3(sections, size):
-    num_of_rows = size // 2
-    for _ in range(num_of_rows):
+    for _ in range(size):
         build_box_row3(sections, size)
 
 
