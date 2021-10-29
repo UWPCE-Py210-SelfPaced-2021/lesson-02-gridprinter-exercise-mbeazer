@@ -29,10 +29,6 @@ def print_grid1():
 
 
 # PART 2
-def end_row():
-    print('+')
-
-
 def add_section(size):
     num_of_sec = size // 2
     print('+ ', end='')
@@ -42,7 +38,7 @@ def add_section(size):
 def build_top_row(size):
     add_section(size)
     add_section(size)
-    end_row()
+    print('+')
 
 
 def add_box_section(size):
@@ -73,16 +69,50 @@ def print_grid2(size):
     build_top_row(size)
 
 
-
 # PART 3
+def add_section3(size):
+    num_of_sec = size // 2
+    print('+ ', end='')
+    print(num_of_sec * '- ', end='')
+
+
+def build_top_row3(sections, size):
+    for _ in range(sections):
+        add_section(size)
+    print('+')
+
+
+def add_box_section3(size):
+    print('| ', end='')
+    if size % 2 == 0:
+        print(size * ' ', end='')
+    else:
+        print((size - 1) * ' ', end='')
+
+
+def build_box_row3(sections, size):
+    for _ in range(sections):
+        add_box_section(size)
+    print('|')
+
+
+def build_box3(sections, size):
+    num_of_rows = size // 2
+    for _ in range(num_of_rows):
+        build_box_row3(sections, size)
+
+
 def print_grid3(box_size, cell_size):
-    pass
+    for _ in range(box_size):
+        build_top_row3(box_size, cell_size)
+        build_box3(box_size, cell_size)
+    build_top_row3(box_size, cell_size)
 
 
 # executes your grid functions below
 if __name__ == "__main__":
-    # print_grid1()
+    print_grid1()
 
     print_grid2(3)
 
-    print_grid3(3, 4)
+    print_grid3(3, 7)
